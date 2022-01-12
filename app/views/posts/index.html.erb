@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 style="text-align:center"><u>Posts</u></h1>
 
-<div id="posts">
+<div id="posts" class="container">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post, class: 'btn btn-secondary' %>
+      <%= link_to "Show this post", post, class: 'btn btn-sm btn-outline-primary' %>
     </p>
   <% end %>
 </div>
