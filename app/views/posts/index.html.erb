@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<h1 style="text-align:center"><u>Posts</u></h1>
-
-<div id="posts" class="container">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post, class: 'btn btn-sm btn-outline-primary' %>
-    </p>
-  <% end %>
+<div style="margin-right:50%; padding:1%; ">
+  <p style="color: green"><%= notice %></p>
+  <br>
+  <br>
+  <br>
+  <h1 style="text-align:center"><u>Posts</u></h1>
+  <hr style="color:#7f101e; height:5px">
+  <div id="posts" class="container">
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <p>
+        <%= link_to "Show this post", post, class: 'btn btn-sm btn-outline-primary' %>
+        <span class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <%= link_to like_post_path(post), method: :put, class: 'btn btn-sm btn-outline-success' do%>
+            <ion-icon name="caret-up-outline"></ion-icon> Upvotes <%= (post.get_upvotes.size)%>
+          <% end%>
+          <%= link_to dislike_post_path(post),method: :put, class: 'btn btn-sm btn-outline-warning' do%>
+            <ion-icon name="caret-down-outline"></ion-icon>Downvotes <%= (post.get_downvotes.size)%>
+          <% end%>
+        </span>
+      </p>
+      <hr/>
+    <% end %>
+  </div>
 </div>
-
-<!-- <%= link_to "New post", new_post_path, class:'btn btn-secondary' %> -->

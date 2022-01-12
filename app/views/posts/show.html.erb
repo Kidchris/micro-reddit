@@ -3,10 +3,10 @@
 <%= render @post %>
 
 <div>
-  <%= link_to "Back to posts", posts_path %>
+  <%= link_to "Back to posts", posts_path, class:"btn btn-outline-secondary" %>
 
   <% if @post.user == current_user %>
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <%= button_to "Destroy this post", @post, method: :delete %>
+    <%= link_to "Edit this post", edit_post_path(@post), class:"btn btn-outline-primary"%> |
+    <%= button_to "Destroy this post", @post, method: :delete, class:'btn btn-warning' %>
   <% end %>
 </div>
