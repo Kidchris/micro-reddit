@@ -8,5 +8,8 @@
     <strong>Content:</strong>
     <%= post.content %>
   </p>
+  <p>
+   Created at : <%= post.created_at.to_s.split[0,2].join(' ') %> by <%= post.user.email %>
+  </p>
 
 </div>
